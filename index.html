@@ -3,187 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahimul Islam Zidan — Robotics Portfolio</title>
+<title>Fahimul Islam Zidan — Robotics</title>
 <style>
   :root {
-    --bg: #0d1210;
-    --bg-panel: #131a17;
-    --line: #26332d;
-    --text: #e8ede9;
-    --text-dim: #8fa39a;
-    --accent: #5ee6a8;
-    --accent-dim: #2f6b52;
-    --mono: 'JetBrains Mono', 'Courier New', monospace;
-    --display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --bg: #fbfaf8;
+    --ink: #1c1c1a;
+    --ink-soft: #6b6b64;
+    --line: #e2e0da;
+    --accent: #3b5d4f;
+    --accent-soft: #dce7e1;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --sans: 'Helvetica Neue', Arial, sans-serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html { scroll-behavior: smooth; }
+
   body {
     background: var(--bg);
-    color: var(--text);
-    font-family: var(--display);
-    line-height: 1.5;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 40px 40px;
-    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
   }
 
-  a { color: inherit; }
-
   .wrap {
-    max-width: 860px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 28px;
   }
 
   header {
-    padding: 80px 0 40px;
-    border-bottom: 1px solid var(--line);
+    padding: 100px 0 60px;
   }
 
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 0.12em;
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .eyebrow::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--accent);
+    color: var(--ink-soft);
+    margin-bottom: 22px;
   }
 
   h1 {
-    font-size: clamp(36px, 6vw, 58px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(38px, 7vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
 
-  .role {
-    margin-top: 14px;
-    font-size: 18px;
-    color: var(--text-dim);
-    max-width: 560px;
+  .subline {
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 480px;
+    line-height: 1.6;
   }
 
-  .role strong { color: var(--text); font-weight: 600; }
+  .subline b { color: var(--ink); font-weight: 600; }
 
-  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
-  section:last-of-type { border-bottom: none; }
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text-dim);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
+  .motif {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
   }
+  .motif svg { width: 100%; max-width: 480px; height: auto; }
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-
-  .stat {
-    background: var(--bg-panel);
-    padding: 28px 20px;
-  }
-
-  .stat .num {
-    font-family: var(--mono);
-    font-size: 34px;
-    color: var(--accent);
-    font-weight: 600;
-  }
-
-  .stat .label {
-    margin-top: 6px;
-    font-size: 13px;
-    color: var(--text-dim);
-  }
-
-  .entry {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 24px;
-    padding: 24px 0;
+  section {
+    padding: 52px 0;
     border-top: 1px solid var(--line);
   }
-  .entry:first-of-type { border-top: none; }
 
-  .entry .when {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent-dim);
-    padding-top: 3px;
-  }
-
-  .entry .title {
-    font-size: 19px;
-    font-weight: 600;
-  }
-
-  .entry .desc {
-    margin-top: 6px;
-    color: var(--text-dim);
-    font-size: 15px;
-    max-width: 560px;
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: var(--mono);
+  .section-title {
     font-size: 12px;
-    color: var(--accent);
-    border: 1px solid var(--accent-dim);
-    padding: 3px 8px;
-    border-radius: 3px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 30px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+  }
+  .item:first-child { border-top: none; padding-top: 0; }
+
+  .item .year {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 15px;
+    padding-top: 2px;
+  }
+
+  .item .name {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .item p {
+    margin-top: 6px;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 460px;
+  }
+
+  .badge {
+    display: inline-block;
     margin-top: 10px;
+    font-size: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 20px;
   }
 
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .skill {
-    font-family: var(--mono);
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
     font-size: 13px;
-    color: var(--text-dim);
+    color: var(--ink);
     border: 1px solid var(--line);
-    background: var(--bg-panel);
-    padding: 8px 14px;
-    border-radius: 4px;
+    padding: 7px 14px;
+    border-radius: 20px;
   }
+
+  .contact-box {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 14px;
+    padding: 40px 36px;
+    margin-top: 6px;
+  }
+
+  .contact-box h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .contact-box p {
+    color: #c9c9c2;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 420px;
+  }
+
+  .mail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    font-size: 15px;
+    color: var(--bg);
+    text-decoration: none;
+    border-bottom: 1px solid #55554d;
+    padding-bottom: 4px;
+    transition: border-color 0.2s ease;
+  }
+  .mail-link:hover { border-color: var(--bg); }
 
   footer {
-    padding: 40px 0 80px;
-    color: var(--text-dim);
-    font-size: 14px;
-    font-family: var(--mono);
+    padding: 40px 0 90px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    text-align: center;
   }
 
-  @media (max-width: 560px) {
-    .stats { grid-template-columns: 1fr; }
-    .entry { grid-template-columns: 1fr; gap: 6px; }
+  @media (max-width: 540px) {
+    .item { grid-template-columns: 1fr; gap: 4px; }
+    .contact-box { padding: 30px 24px; }
   }
 </style>
 </head>
@@ -191,73 +185,88 @@
 <div class="wrap">
 
   <header>
-    <div class="eyebrow">robotics · student engineer</div>
-    <h1>Fahimul Islam Zidan</h1>
-    <p class="role">Student at <strong>Navy Anchorage School</strong> (English Version), building competition robotics and automated systems — <strong>national and regional award winner</strong>.</p>
+    <div class="kicker">Robotics · Student Engineer</div>
+    <h1>Fahimul Islam<br>Zidan</h1>
+    <p class="subline">Student at <b>Navy Anchorage School</b> (English Version), building competition robotics and automated systems — <b>national and regional award winner</b>.</p>
+
+    <div class="motif">
+      <svg viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#3b5d4f" stroke-width="1.4" stroke-linecap="round">
+          <line x1="10" y1="70" x2="90" y2="70"/>
+          <circle cx="90" cy="70" r="5" fill="#3b5d4f" stroke="none"/>
+          <line x1="95" y1="70" x2="150" y2="70"/>
+          <line x1="150" y1="70" x2="150" y2="30"/>
+          <line x1="150" y1="30" x2="220" y2="30"/>
+          <circle cx="220" cy="30" r="5" fill="#3b5d4f" stroke="none"/>
+          <line x1="150" y1="70" x2="150" y2="110"/>
+          <line x1="150" y1="110" x2="220" y2="110"/>
+          <circle cx="220" cy="110" r="5" fill="#3b5d4f" stroke="none"/>
+          <rect x="225" y="55" width="30" height="30" rx="3"/>
+          <line x1="255" y1="70" x2="330" y2="70"/>
+          <line x1="330" y1="70" x2="330" y2="30"/>
+          <line x1="330" y1="30" x2="400" y2="30"/>
+          <circle cx="400" cy="30" r="5" fill="#3b5d4f" stroke="none"/>
+          <line x1="330" y1="70" x2="330" y2="110"/>
+          <line x1="330" y1="110" x2="400" y2="110"/>
+          <circle cx="400" cy="110" r="5" fill="#3b5d4f" stroke="none"/>
+          <line x1="405" y1="70" x2="470" y2="70"/>
+          <circle cx="470" cy="70" r="5" fill="#3b5d4f" stroke="none"/>
+        </g>
+      </svg>
+    </div>
   </header>
 
   <section>
-    <div class="stats">
-      <div class="stat">
-        <div class="num">2×</div>
-        <div class="label">National / Regional wins</div>
+    <div class="section-title">Achievements</div>
+
+    <div class="item">
+      <div class="year">2024</div>
+      <div>
+        <div class="name">National-level robotics recognition</div>
+        <p>Placed among top entries at a national robotics competition, presenting a working project built and demonstrated live to judges.</p>
+        <span class="badge">1st placement — national</span>
       </div>
-      <div class="stat">
-        <div class="num">1</div>
-        <div class="label">Press feature — science festival</div>
+    </div>
+
+    <div class="item">
+      <div class="year">2024</div>
+      <div>
+        <div class="name">Regional robotics recognition</div>
+        <p>Recognized at a regional science and robotics showcase for project design and technical demonstration.</p>
+        <span class="badge">Regional award</span>
       </div>
-      <div class="stat">
-        <div class="num">EV</div>
-        <div class="label">English Version program</div>
+    </div>
+
+    <div class="item">
+      <div class="year">2020</div>
+      <div>
+        <div class="name">Featured in local press — Science Festival</div>
+        <p>Robotics project covered in a newspaper report on a school science festival, showcasing student-built technical projects to the public.</p>
+        <span class="badge">Press coverage</span>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="section-label">Achievements</div>
-
-    <div class="entry">
-      <div class="when">2024</div>
-      <div>
-        <div class="title">National-level robotics recognition</div>
-        <div class="desc">Placed among top entries at a national robotics competition, presenting a working project built and demonstrated live to judges.</div>
-        <span class="tag">1st placement — national</span>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="when">2024</div>
-      <div>
-        <div class="title">Regional robotics recognition</div>
-        <div class="desc">Recognized at a regional science and robotics showcase for project design and technical demonstration.</div>
-        <span class="tag">Regional award</span>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="when">Oct 2020</div>
-      <div>
-        <div class="title">Featured in local press — Science Festival</div>
-        <div class="desc">Robotics project covered in a newspaper report on a school science festival, showcasing student-built technical projects to the public.</div>
-        <span class="tag">Press coverage</span>
-      </div>
+    <div class="section-title">Focus Areas</div>
+    <div class="tags">
+      <span class="tag">Robotics</span>
+      <span class="tag">Circuit building</span>
+      <span class="tag">Project demonstration</span>
+      <span class="tag">Competition prep</span>
+      <span class="tag">Team presentation</span>
     </div>
   </section>
 
   <section>
-    <div class="section-label">Focus areas</div>
-    <div class="skills">
-      <div class="skill">Robotics</div>
-      <div class="skill">Circuit building</div>
-      <div class="skill">Project demonstration</div>
-      <div class="skill">Competition prep</div>
-      <div class="skill">Team presentation</div>
+    <div class="contact-box">
+      <h2>Get in touch</h2>
+      <p>Open to talking about robotics projects, competitions, or helping out with science fair ideas — reach out any time.</p>
+      <a class="mail-link" href="mailto:zidanfahimulislam123@gmail.com">zidanfahimulislam123@gmail.com →</a>
     </div>
   </section>
 
-  <footer>
-    Portfolio — robotics achievements &amp; project work
-  </footer>
+  <footer>Portfolio — robotics achievements &amp; project work</footer>
 
 </div>
 </body>

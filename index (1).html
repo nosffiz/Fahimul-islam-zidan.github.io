@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahimul Islam Zidan — Robotics Portfolio</title>
+<style>
+  :root {
+    --bg: #0d1210;
+    --bg-panel: #131a17;
+    --line: #26332d;
+    --text: #e8ede9;
+    --text-dim: #8fa39a;
+    --accent: #5ee6a8;
+    --accent-dim: #2f6b52;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+    --display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--display);
+    line-height: 1.5;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    padding: 80px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .role {
+    margin-top: 14px;
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 560px;
+  }
+
+  .role strong { color: var(--text); font-weight: 600; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .stat {
+    background: var(--bg-panel);
+    padding: 28px 20px;
+  }
+
+  .stat .num {
+    font-family: var(--mono);
+    font-size: 34px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .stat .label {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+  .entry:first-of-type { border-top: none; }
+
+  .entry .when {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent-dim);
+    padding-top: 3px;
+  }
+
+  .entry .title {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .entry .desc {
+    margin-top: 6px;
+    color: var(--text-dim);
+    font-size: 15px;
+    max-width: 560px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-top: 10px;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+    padding: 8px 14px;
+    border-radius: 4px;
+  }
+
+  footer {
+    padding: 40px 0 80px;
+    color: var(--text-dim);
+    font-size: 14px;
+    font-family: var(--mono);
+  }
+
+  @media (max-width: 560px) {
+    .stats { grid-template-columns: 1fr; }
+    .entry { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">robotics · student engineer</div>
+    <h1>Fahimul Islam Zidan</h1>
+    <p class="role">Student at <strong>Navy Anchorage School</strong> (English Version), building competition robotics and automated systems — <strong>national and regional award winner</strong>.</p>
+  </header>
+
+  <section>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">2×</div>
+        <div class="label">National / Regional wins</div>
+      </div>
+      <div class="stat">
+        <div class="num">1</div>
+        <div class="label">Press feature — science festival</div>
+      </div>
+      <div class="stat">
+        <div class="num">EV</div>
+        <div class="label">English Version program</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Achievements</div>
+
+    <div class="entry">
+      <div class="when">2024</div>
+      <div>
+        <div class="title">National-level robotics recognition</div>
+        <div class="desc">Placed among top entries at a national robotics competition, presenting a working project built and demonstrated live to judges.</div>
+        <span class="tag">1st placement — national</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2024</div>
+      <div>
+        <div class="title">Regional robotics recognition</div>
+        <div class="desc">Recognized at a regional science and robotics showcase for project design and technical demonstration.</div>
+        <span class="tag">Regional award</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">Oct 2020</div>
+      <div>
+        <div class="title">Featured in local press — Science Festival</div>
+        <div class="desc">Robotics project covered in a newspaper report on a school science festival, showcasing student-built technical projects to the public.</div>
+        <span class="tag">Press coverage</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Focus areas</div>
+    <div class="skills">
+      <div class="skill">Robotics</div>
+      <div class="skill">Circuit building</div>
+      <div class="skill">Project demonstration</div>
+      <div class="skill">Competition prep</div>
+      <div class="skill">Team presentation</div>
+    </div>
+  </section>
+
+  <footer>
+    Portfolio — robotics achievements &amp; project work
+  </footer>
+
+</div>
+</body>
+</html>

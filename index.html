@@ -3,271 +3,569 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahimul Islam Zidan — Robotics</title>
+<title>Fahimul Islam Zidan — Robotics Engineer</title>
+<meta name="description" content="Portfolio of Fahimul Islam Zidan — robotics engineer building autonomous machines, from trash-collecting bots to agricultural and traffic-control AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #fbfaf8;
-    --ink: #1c1c1a;
-    --ink-soft: #6b6b64;
-    --line: #e2e0da;
-    --accent: #3b5d4f;
-    --accent-soft: #dce7e1;
-    --serif: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
-    --sans: 'Helvetica Neue', Arial, sans-serif;
+  :root{
+    --bg: #0a1414;
+    --panel: #0f1c1c;
+    --panel-2: #122222;
+    --line: #1e3232;
+    --line-bright: #2c4a48;
+    --text: #e7f0ec;
+    --muted: #7fa39b;
+    --muted-dim: #4d6864;
+    --accent: #37e6b0;
+    --accent-dim: #1f8a68;
+    --warm: #ffb454;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *{ box-sizing: border-box; margin:0; padding:0; }
 
-  html { scroll-behavior: smooth; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
 
-  body {
+  body{
     background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    -webkit-font-smoothing: antialiased;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(127,163,155,0.14) 1px, transparent 0);
+    background-size: 28px 28px;
   }
 
-  .wrap {
-    max-width: 720px;
+  a{ color: inherit; }
+
+  .mono{ font-family: 'JetBrains Mono', monospace; }
+
+  .wrap{
+    max-width: 920px;
     margin: 0 auto;
     padding: 0 28px;
   }
 
-  header {
-    padding: 100px 0 60px;
+  /* ---------- Nav / status bar ---------- */
+  .statusbar{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(10,20,20,0.85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .statusbar .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .status-id{
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .status-live{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .led{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--warm);
+    box-shadow: 0 0 6px var(--warm), 0 0 14px rgba(255,180,84,0.5);
+    animation: blink 2.6s ease-in-out infinite;
+  }
+  @keyframes blink{
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
   }
 
-  .kicker {
-    font-size: 12px;
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 96px 0 80px;
+    position: relative;
+  }
+  .eyebrow{
+    font-size: 12.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: var(--accent);
     margin-bottom: 22px;
-  }
-
-  h1 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(38px, 7vw, 56px);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
-
-  .subline {
-    margin-top: 18px;
-    font-size: 17px;
-    color: var(--ink-soft);
-    max-width: 480px;
-    line-height: 1.6;
-  }
-
-  .subline b { color: var(--ink); font-weight: 600; }
-
-  .motif {
-    margin-top: 48px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
-  .motif svg { width: 100%; max-width: 480px; height: auto; }
-
-  section {
-    padding: 52px 0;
-    border-top: 1px solid var(--line);
+  .eyebrow::before{
+    content: '';
+    width: 22px; height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  h1{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(38px, 7vw, 68px);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    max-width: 780px;
+  }
+  h1 span{ color: var(--accent); }
+  .role{
+    margin-top: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(17px, 2.4vw, 22px);
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .lede{
+    margin-top: 22px;
+    max-width: 560px;
+    color: #c4d4cf;
+    font-size: 16px;
+  }
+  .hero-meta{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .hero-meta div{
+    border-left: 2px solid var(--line-bright);
+    padding-left: 12px;
+  }
+  .hero-meta .n{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .hero-meta .l{
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-dim);
+    margin-top: 2px;
   }
 
-  .section-title {
+  /* ---------- Section headers ---------- */
+  section{ position: relative; }
+  .section-head{
+    padding: 64px 0 8px;
+  }
+  .section-tag{
     font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 30px;
+    color: var(--muted-dim);
+    margin-bottom: 10px;
   }
-
-  .item {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 20px;
-    padding: 22px 0;
-    border-top: 1px solid var(--line);
-  }
-  .item:first-child { border-top: none; padding-top: 0; }
-
-  .item .year {
-    font-family: var(--serif);
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 15px;
-    padding-top: 2px;
-  }
-
-  .item .name {
+  .section-title{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(24px, 3.6vw, 32px);
     font-weight: 600;
-    font-size: 16px;
   }
 
-  .item p {
-    margin-top: 6px;
-    color: var(--ink-soft);
-    font-size: 14.5px;
-    line-height: 1.55;
-    max-width: 460px;
+  /* ---------- Timeline (PCB trace) ---------- */
+  .timeline{
+    position: relative;
+    padding: 40px 0 20px;
+  }
+  .trace-rail{
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--line);
+  }
+  .trace-rail::after{
+    content:'';
+    position: absolute;
+    left: 0; top: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(to bottom, var(--accent), transparent 88%);
+    opacity: 0.55;
   }
 
-  .badge {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 12px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    padding: 4px 10px;
-    border-radius: 20px;
+  .node{
+    position: relative;
+    padding: 0 0 56px 56px;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .node.in-view{ opacity: 1; transform: translateY(0); }
+  .node:last-child{ padding-bottom: 8px; }
+
+  .node .pad{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--panel);
+    border: 2px solid var(--accent-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .node.in-view .pad{
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(55,230,176,0.1), 0 0 12px rgba(55,230,176,0.35);
+  }
+  .node .pad::after{
+    content:'';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+  }
+  .node.in-view .pad::after{ background: var(--accent); }
+
+  .node .lead{
+    position: absolute;
+    left: 26px;
+    top: 15px;
+    width: 30px;
+    height: 2px;
+    background: var(--line-bright);
   }
 
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag {
-    font-size: 13px;
-    color: var(--ink);
+  .card{
+    background: linear-gradient(180deg, var(--panel-2), var(--panel));
     border: 1px solid var(--line);
-    padding: 7px 14px;
-    border-radius: 20px;
+    border-radius: 10px;
+    padding: 24px 26px;
   }
-
-  .contact-box {
-    background: var(--ink);
-    color: var(--bg);
-    border-radius: 14px;
-    padding: 40px 36px;
-    margin-top: 6px;
+  .card-top{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
   }
-
-  .contact-box h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 26px;
-    margin-bottom: 12px;
+  .card-year{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
   }
-
-  .contact-box p {
-    color: #c9c9c2;
+  .card-tag{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted-dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .card h3{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .card p{
+    color: #b9cbc6;
     font-size: 15px;
-    line-height: 1.6;
-    max-width: 420px;
+    max-width: 60ch;
   }
-
-  .mail-link {
+  .badge{
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 22px;
-    font-size: 15px;
-    color: var(--bg);
+    gap: 7px;
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--warm);
+    background: rgba(255,180,84,0.08);
+    border: 1px solid rgba(255,180,84,0.25);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .badge::before{
+    content:'▲';
+    font-size: 9px;
+  }
+
+  /* ---------- About / skills ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    padding: 20px 0 60px;
+  }
+  @media (max-width: 720px){
+    .about-grid{ grid-template-columns: 1fr; }
+  }
+  .about-grid p{ color: #c4d4cf; font-size: 15.5px; margin-bottom: 14px; }
+  .stack{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .chip{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    border: 1px solid var(--line-bright);
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: var(--panel);
+  }
+
+  /* ---------- Footer / contact ---------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 56px 0 40px;
+    margin-top: 40px;
+  }
+  .footer-title{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .footer-sub{
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 28px;
+  }
+  .mail-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(15px, 2.6vw, 19px);
+    color: var(--accent);
     text-decoration: none;
-    border-bottom: 1px solid #55554d;
-    padding-bottom: 4px;
-    transition: border-color 0.2s ease;
+    border-bottom: 1px solid var(--accent-dim);
+    padding-bottom: 6px;
+    transition: border-color 0.3s ease, color 0.3s ease;
   }
-  .mail-link:hover { border-color: var(--bg); }
+  .mail-link:hover{ border-color: var(--accent); color: #6ffcc9; }
+  .mail-link .arrow{ transition: transform 0.3s ease; }
+  .mail-link:hover .arrow{ transform: translateX(4px); }
 
-  footer {
-    padding: 40px 0 90px;
-    color: var(--ink-soft);
-    font-size: 13px;
-    text-align: center;
+  .foot-bottom{
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--muted-dim);
+    font-family: 'JetBrains Mono', monospace;
   }
 
-  @media (max-width: 540px) {
-    .item { grid-template-columns: 1fr; gap: 4px; }
-    .contact-box { padding: 30px 24px; }
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <div class="kicker">Robotics · Student Engineer</div>
-    <h1>Fahimul Islam<br>Zidan</h1>
-    <p class="subline">Student at <b>Navy Anchorage School</b> (English Version), building competition robotics and automated systems — <b>national and regional award winner</b>.</p>
+  <div class="statusbar">
+    <div class="wrap">
+      <div class="status-id mono">FIZ // ROBOTICS-LOG</div>
+      <div class="status-live">
+        <span class="led"></span>
+        System Active
+      </div>
+    </div>
+  </div>
 
-    <div class="motif">
-      <svg viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="#3b5d4f" stroke-width="1.4" stroke-linecap="round">
-          <line x1="10" y1="70" x2="90" y2="70"/>
-          <circle cx="90" cy="70" r="5" fill="#3b5d4f" stroke="none"/>
-          <line x1="95" y1="70" x2="150" y2="70"/>
-          <line x1="150" y1="70" x2="150" y2="30"/>
-          <line x1="150" y1="30" x2="220" y2="30"/>
-          <circle cx="220" cy="30" r="5" fill="#3b5d4f" stroke="none"/>
-          <line x1="150" y1="70" x2="150" y2="110"/>
-          <line x1="150" y1="110" x2="220" y2="110"/>
-          <circle cx="220" cy="110" r="5" fill="#3b5d4f" stroke="none"/>
-          <rect x="225" y="55" width="30" height="30" rx="3"/>
-          <line x1="255" y1="70" x2="330" y2="70"/>
-          <line x1="330" y1="70" x2="330" y2="30"/>
-          <line x1="330" y1="30" x2="400" y2="30"/>
-          <circle cx="400" cy="30" r="5" fill="#3b5d4f" stroke="none"/>
-          <line x1="330" y1="70" x2="330" y2="110"/>
-          <line x1="330" y1="110" x2="400" y2="110"/>
-          <circle cx="400" cy="110" r="5" fill="#3b5d4f" stroke="none"/>
-          <line x1="405" y1="70" x2="470" y2="70"/>
-          <circle cx="470" cy="70" r="5" fill="#3b5d4f" stroke="none"/>
-        </g>
-      </svg>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Robotics Engineer</div>
+      <h1>Fahimul Islam Zidan<span>.</span></h1>
+      <div class="role">Building autonomous machines that work — plowing fields, watching intersections, reading the road.</div>
+      <p class="lede">
+        Student at <!-- EDIT: replace with your institution name --><span id="institution">[Your Institution Name]</span>, and a robotics builder since 2023.
+        I design and ship autonomous systems end to end — mechanical build, control software, and the AI that lets a
+        machine make its own decisions in the field.
+      </p>
+
+      <div class="hero-meta">
+        <div>
+          <div class="n">4</div>
+          <div class="l">Years Building</div>
+        </div>
+        <div>
+          <div class="n">4</div>
+          <div class="l">Autonomous Systems Shipped</div>
+        </div>
+        <div>
+          <div class="n">1st</div>
+          <div class="l">Place, School Robotics 2023</div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section>
-    <div class="section-title">Achievements</div>
-
-    <div class="item">
-      <div class="year">2024</div>
-      <div>
-        <div class="name">National-level robotics recognition</div>
-        <p>Placed among top entries at a national robotics competition, presenting a working project built and demonstrated live to judges.</p>
-        <span class="badge">1st placement — national</span>
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag mono">// Build Log — 2023 to 2026</div>
+        <div class="section-title">Four systems, four years.</div>
       </div>
-    </div>
 
-    <div class="item">
-      <div class="year">2024</div>
-      <div>
-        <div class="name">Regional robotics recognition</div>
-        <p>Recognized at a regional science and robotics showcase for project design and technical demonstration.</p>
-        <span class="badge">Regional award</span>
-      </div>
-    </div>
+      <div class="timeline">
+        <div class="trace-rail"></div>
 
-    <div class="item">
-      <div class="year">2020</div>
-      <div>
-        <div class="name">Featured in local press — Science Festival</div>
-        <p>Robotics project covered in a newspaper report on a school science festival, showcasing student-built technical projects to the public.</p>
-        <span class="badge">Press coverage</span>
+        <div class="node">
+          <div class="pad"></div>
+          <div class="lead"></div>
+          <div class="card">
+            <div class="card-top">
+              <span class="card-year mono">2023</span>
+              <span class="card-tag mono">Mechanical + Control</span>
+            </div>
+            <h3>Trash-Collecting Robot</h3>
+            <p>
+              My first full build: a robot designed to locate and collect waste on its own. It took first place
+              at my school's robotics competition — the project that turned robotics from a hobby into the thing
+              I wanted to spend every year building on.
+            </p>
+            <span class="badge">1st Place — School Robotics Competition</span>
+          </div>
+        </div>
+
+        <div class="node">
+          <div class="pad"></div>
+          <div class="lead"></div>
+          <div class="card">
+            <div class="card-top">
+              <span class="card-year mono">2024</span>
+              <span class="card-tag mono">Agriculture · Autonomy</span>
+            </div>
+            <h3>Acromat</h3>
+            <p>
+              A fully autonomous agricultural robot built to plow fields and carry out other farm work without a
+              human driver. Acromat was my first real step into autonomy — sensing terrain, correcting its own
+              path, and finishing a job unattended.
+            </p>
+          </div>
+        </div>
+
+        <div class="node">
+          <div class="pad"></div>
+          <div class="lead"></div>
+          <div class="card">
+            <div class="card-top">
+              <span class="card-year mono">2025</span>
+              <span class="card-tag mono">Computer Vision · Traffic</span>
+            </div>
+            <h3>AI Traffic Camera System</h3>
+            <p>
+              An autonomous street camera system that reads live traffic and controls signals on its own —
+              no manual switching, no fixed timers. It watches the intersection and decides in real time.
+            </p>
+          </div>
+        </div>
+
+        <div class="node">
+          <div class="pad"></div>
+          <div class="lead"></div>
+          <div class="card">
+            <div class="card-top">
+              <span class="card-year mono">2026</span>
+              <span class="card-tag mono">Monitoring · Infrastructure</span>
+            </div>
+            <h3>Road AI Monitoring System</h3>
+            <p>
+              My latest system: an AI network that monitors road conditions and their surroundings continuously,
+              surfacing what's happening on the ground without anyone having to go look.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="section-title">Focus Areas</div>
-    <div class="tags">
-      <span class="tag">Robotics</span>
-      <span class="tag">Circuit building</span>
-      <span class="tag">Project demonstration</span>
-      <span class="tag">Competition prep</span>
-      <span class="tag">Team presentation</span>
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag mono">// About</div>
+        <div class="section-title">What I work with.</div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>
+            I'm a robotics builder focused on autonomy — machines that sense their environment and act on it
+            without step-by-step human control. Every project above shares the same core loop: perceive, decide,
+            move, and every year I've pushed that loop into a harder domain.
+          </p>
+          <p>
+            From a competition-winning trash collector to a road-monitoring AI network, the throughline is
+            building systems that can be trusted to run on their own.
+          </p>
+        </div>
+        <div>
+          <div class="card-tag mono" style="margin-bottom:12px;">Working With</div>
+          <div class="stack">
+            <span class="chip">Autonomous Navigation</span>
+            <span class="chip">Computer Vision</span>
+            <span class="chip">Robotics Control Systems</span>
+            <span class="chip">Sensor Fusion</span>
+            <span class="chip">Embedded Systems</span>
+            <span class="chip">AI / Applied ML</span>
+            <span class="chip">Agricultural Robotics</span>
+            <span class="chip">Traffic & Infrastructure AI</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="contact-box">
-      <h2>Get in touch</h2>
-      <p>Open to talking about robotics projects, competitions, or helping out with science fair ideas — reach out any time.</p>
-      <a class="mail-link" href="mailto:zidanfahimulislam123@gmail.com">zidanfahimulislam123@gmail.com →</a>
+  <footer>
+    <div class="wrap">
+      <div class="section-tag mono">// Get In Touch</div>
+      <div class="footer-title">Let's build something autonomous.</div>
+      <p class="footer-sub">Open to collaborations, competitions, and questions about any of the systems above.</p>
+      <a class="mail-link" href="mailto:zidanfahimulislam123@gmail.com">
+        zidanfahimulislam123@gmail.com <span class="arrow">→</span>
+      </a>
+      <div class="foot-bottom">
+        <span>Fahimul Islam Zidan</span>
+        <span>Building since 2023</span>
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <footer>Portfolio — robotics achievements &amp; project work</footer>
+  <script>
+    const nodes = document.querySelectorAll('.node');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      nodes.forEach(n => io.observe(n));
+    } else {
+      nodes.forEach(n => n.classList.add('in-view'));
+    }
+  </script>
 
-</div>
 </body>
 </html>
